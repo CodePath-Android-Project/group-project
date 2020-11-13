@@ -88,10 +88,10 @@ Optional:
 * Settings -> Toggle settings
 
 ## Wireframes
-<img src="https://imgur.com/4Ain4Cw.jpg" width=250 height=250><br>
+<img src="https://imgur.com/4Ain4Cw.jpg" width=500 height=250><br>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="https://imgur.com/J63TTlw.jpg" width=200 height=200>
+<img src="https://imgur.com/J63TTlw.jpg" width=500 height=200>
 
 ### [BONUS] Interactive Prototype
 <img src="https://imgur.com/aYYrc7l.gif" width=200>
