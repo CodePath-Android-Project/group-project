@@ -94,4 +94,4 @@ Optional:
 <img src="https://imgur.com/J63TTlw.jpg" height=200>
 
 ### [BONUS] Interactive Prototype
-<img src="https://i.imgur.com/AiKfE5g.gif" width=200>
+<img src="https://imgur.com/aYYrc7l.gif" width=200>
