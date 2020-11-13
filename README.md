@@ -1,6 +1,6 @@
 # group-project
 Unit 8: Group Milestone - README Example
-# TUNIN
+# Job and Skill Finder
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -9,70 +9,86 @@ Unit 8: Group Milestone - README Example
 
 ## Overview
 ### Description
-Tracks what music an individual listens to, and pairs them with others based on that music. Could be potentially used as a dating app, or just meeting new friends with similar music tastes.
+Helps students whether they're local or international to look for jobs based on the skills they have to offer and to look for skills that are desired by employers.
 
 ### App Evaluation
-- **Category:** Social Networking / Music
-- **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer, such as tinder or other similar apps. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
-- **Story:** Analyzes users music choices, and connects them to other users with similar choices. The user can then decide to message this person and befriend them if wanted.
-- **Market:** Any individual could choose to use this app, and to keep it a safe environment, people would be organized into age groups.
-- **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their social life is, and what exactly they're looking for.
-- **Scope:** First we would start with pairing people based on music taste, then perhaps this could evolve into a music sharing application as well to broaden its usage. Large potential for use with spotify, apple music, or other music streaming applications.
+- **Category:** Jobs database for students
+- **Mobile:** Mobile is essential for instant logging and real-time experience, uses maps too. Mobile first experience
+- **Story:** Allow users to find job based on the skills they have to offer,and student work status authorization.
+- **Market:** All students, whether they are international or local, seeking job can enjoy this app.
+- **Habit:** Users are using this frequently in their job haunt. They will be notified about jobs availabilty from compamies they are interested in, and positions they’re interested in based on their location.
+- **Scope:** This app idea came in as many International struggle to find job at companies, because not all of them offer sponsorship to not US citizens. This app will then help them to know which company they can work at based on their skills they have to offer. It also lets students to know what skills employers are looking for to get hired. Its helps students whether they are local or international students.
 
 ## Product Spec
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-
-* User logs in to access previous chats and preference settings
-* User picks what their favorite artist/genre/etc. (Think Spotify interface)
-* Matches have a chat window to get to know each other, with the ability to skip music and unmatch (Tinder Style).
-* Profile pages for each user
+* User authentification
+* Job posting feed with filter
+* Job posting feed for international students from companies that sponsor
+* Profile pages for each user where they can see all their saved posts
 * Settings (Accesibility, Notification, General, etc.)
 
 **Optional Nice-to-have Stories**
 
-* Log of past songs/people with album art covers matching
-* Page of most played songs (i.e. songs that most users are connecting through)
-* Profile Add-On: Top music choices, etc.
-* Optional Shuffle Button (i.e. random encounter/random song)
-* Listening/Encounter Queue
+* Users can save jobs they are interested in
+* Skills companies are looking for
+* where to look for such skills
+* Users can tap a post to see more details about it
+* Users can see populate or trending jobs and jobs that match most their skills
+* User can search for jobs by a hashtag
+* User can post or share a recommended job
+* Social (messaging between users)
 
 ### 2. Screen Archetypes
 
-* Login 
-* Register - User signs up or logs into their account
-   * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to be properly matched with another person. 
+* Login Screen for current users
+    * User can login
+* Signup or Registration for new users
+   * User can create a new account
+       * Username (required)
+       * Password (required)
+       * Email (required)
+       * Phone (optional)
+* Stream or Timeline for logged users
+   * User can view jobs feed of trending jobs
+   * User can double tap a post to save it
    * ...
-* Messaging Screen - Chat for users to communicate (direct 1-on-1)
-   * Upon selecting music choice users matched and message screen opens
-* Profile Screen 
-   * Allows user to upload a photo and fill in information that is interesting to them and others
-* Song Selection Screen.
-   * Allows user to be able to choose their desired song, artist, genre of preference and begin listening and interacting with others.
-* Settings Screen
-   * Lets people change language, and app notification settings.
+* Creation
+    * User can post or share a recommended job
+    * ...
+* Profile
+    * User can see all their saved posts
+* Search
+    * User can search for job at companies that offer sponsorship.
+    * User can search for jobs based on desired filter.
+    * User can follow comanies that are or could be hiring in the future.
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* Music selection
+* Home feed
+* Post details
+* Search Jobs
+* Post job.
 * Profile
-* Settings
 
 Optional:
-* Music/Encounter Queue
-* Discover (Top Choices)
+* ...
 
 **Flow Navigation** (Screen to Screen)
 * Forced Log-in -> Account creation if no log in is available
-* Music Selection (Or Queue if Optional) -> Jumps to Chat
+* Login Screen -> Home
+* Signup or Registration Screen -> Home
+* Stream or Timeline Screen -> None, but in future will go to post details screen
+* Creation -> Home
+* Search -> none for now
 * Profile -> Text field to be modified. 
 * Settings -> Toggle settings
 
 ## Wireframes
-<img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
+<img src="https://imgur.com/4Ain4Cw.jpg" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
