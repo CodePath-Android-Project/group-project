@@ -91,7 +91,7 @@ Optional:
 <img src="https://imgur.com/4Ain4Cw.jpg" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="https://i.imgur.com/lYHn37F.jpg" height=200>
+<img src="https://imgur.com/J63TTlw.jpg" height=200>
 
 ### [BONUS] Interactive Prototype
 <img src="https://i.imgur.com/AiKfE5g.gif" width=200>
