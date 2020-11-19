@@ -95,3 +95,51 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 <img src="https://imgur.com/aYYrc7l.gif" width=200>
+
+
+
+
+## Model: Trending Jobs
+
+| Property         | Type     | Description |
+| --------         | -------- | ----------- |
+| objectId         | String   | unique id for the user post (default field)|
+| author           | User     | User profile-pic|
+| createdAt        | DateTime | date when post is created (default field)|
+| updatedAt        | DateTime | date when post is last updated (default field)|
+| isFull           | boolean  | see if job is full.
+| topSkill1        | String   | top 1 skill needed for this job|
+| topSkill2        | String   | top 2 skill needed for this job|
+| topSkill3        | String   | top 3 skill needed for this job|
+| offerSponsorship | boolean  | inform user if their visa qualify for this position|
+| applicants | Number | number of applicans for this position|
+| hastags | Symbol | get information about a specific job, industry, major or qualification needed, ...|
+| likesCount | Number | number of likes for the job |
+
+##Outline Parse Network Requests
+
+
+### Trending Jobs
+* Read/GET (query all available jobs post)
+* Create/POST (create a new like on a post)
+* Delete/DELETE (delete existing like on job post)
+* ...
+
+### Search Jobs
+* Read/GET (query all available job post that match search)
+
+### Search Results
+* Create/POST(post all available job posts that match search)
+* Read/Get(get post information)
+
+### Post Jobs
+* Create/Post(post job to the database)
+
+
+### Profile
+* Read/GET(get user information)
+* Update/Put(update user information)
+### Post Details
+* Read/Get(get post information)
+
+
