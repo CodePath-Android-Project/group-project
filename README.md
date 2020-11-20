@@ -97,9 +97,11 @@ Optional:
 <img src="https://imgur.com/aYYrc7l.gif" width=200>
 
 
+## Schema
 
+### Models
 
-## Model: Trending Jobs
+Job
 
 | Property         | Type     | Description |
 | --------         | -------- | ----------- |
@@ -108,38 +110,100 @@ Optional:
 | createdAt        | DateTime | date when post is created (default field)|
 | updatedAt        | DateTime | date when post is last updated (default field)|
 | isFull           | boolean  | see if job is full.
-| topSkill1        | String   | top 1 skill needed for this job|
-| topSkill2        | String   | top 2 skill needed for this job|
-| topSkill3        | String   | top 3 skill needed for this job|
+| skills           | List<Skill>| list of top skills needed for this job
 | offerSponsorship | boolean  | inform user if their visa qualify for this position|
 | applicants | Number | number of applicans for this position|
 | hastags | Symbol | get information about a specific job, industry, major or qualification needed, ...|
 | likesCount | Number | number of likes for the job |
 
-##Outline Parse Network Requests
 
+### Networking
 
-### Trending Jobs
-* Read/GET (query all available jobs post)
-* Create/POST (create a new like on a post)
-* Delete/DELETE (delete existing like on job post)
-* ...
+#### List of network requests by screen
 
-### Search Jobs
-* Read/GET (query all available job post that match search)
+* ### Trending Jobs
+    * Read/GET (query all available jobs post and all posts where user is author)
+    
+        `ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        query.whereKey("author", equalTo: currentUser);
+        query.order(byDescending: "createdAt");
+        query.findObjectxInBackground(new FindCallBack<Post>() {
+            public void done(List<Post> posts, ParseException e) {
+                if(e != null) {
+                    Log.e(TAG, "Issue with getting posts", e);
+                    return;
+                }
+                for(Post post : posts) {
+                    Log.i(TAG, "Post: " + post.getDescription() + " - Username: " + post.getUser().getUsername());
+                }
 
-### Search Results
-* Create/POST(post all available job posts that match search)
-* Read/Get(get post information)
+                //TODO: what to do with posts go here...
+                allPosts.clear();
+                allPosts.addAll(posts);
+                adapter.notifyDataSetChanged();
+                swipeContainer.setRefreshing(false); // refresh is done
+            }
+        });`
+    
+    * Create/POST (create a new like on a post)
+    * Delete/DELETE (delete existing like)
 
-### Post Jobs
-* Create/Post(post job to the database)
+* ### Search Jobs
+    * Read/GET (query all available job post that match search)
 
+* ### Search Results
+    * Create/POST(post all available job posts that match search)
+    * Read/Get(get post information)
 
-### Profile
-* Read/GET(get user information)
-* Update/Put(update user information)
-### Post Details
-* Read/Get(get post information)
+* ### Post Jobs Screen
+    * Create/Post(post job to the database)
 
+        ParseObject post = new ParseObject("Post");
+        post.put("title", "My New Post");
+        post.put("body", "This is some great content.");
+        post.put("user", user);
+        post.saveInBackground();
 
+* ### Post Details Screen
+    * Read/Get(get post information)
+    
+* ### Profile Screen
+    * Read/GET(query logged in user object)
+    * Update/Put(update user information: profile image, resume)
+        
+* ### User Sign Up Screen
+   * Read/GET
+   
+    ParseUser user = new ParseUser();
+    user.setUsername("my name");
+    user.setPassword("my pass");
+    user.setEmail("email@example.com");
+
+    // other fields can be set just like with ParseObject
+    user.put("phone", "650-253-0000");
+
+    user.signUpInBackground(new SignUpCallback() {
+      public void done(ParseException e) {
+        if (e == null) {
+          // Hooray! Let them use the app now.
+        } else {
+          // Sign up didn't succeed. Look at the ParseException
+          // to figure out what went wrong
+        }
+      }
+    });
+
+* ### User Login Screen
+   * Read/GET
+   
+    ParseUser.logInInBackground("Jerry", "showmethemoney", new LogInCallback() {
+      public void done(ParseUser user, ParseException e) {
+        if (user != null) {
+          // Hooray! The user is logged in.
+        } else {
+          // Signup failed. Look at the ParseException to see what happened.
+        }
+      }
+    });
+
+### [OPTIONAL:] Existing API Endpoints
