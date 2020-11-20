@@ -1,5 +1,4 @@
 # group-project
-Unit 8: Group Milestone - README Example
 # Job and Skill Finder
 
 ## Table of Contents
