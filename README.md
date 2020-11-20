@@ -121,10 +121,10 @@ Job
 
 #### List of network requests by screen
 
-* ### Trending Jobs
+* Trending Jobs
     * Read/GET (query all available jobs post and all posts where user is author)
-    
-        `ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+      ```
+        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.whereKey("author", equalTo: currentUser);
         query.order(byDescending: "createdAt");
         query.findObjectxInBackground(new FindCallBack<Post>() {
@@ -143,19 +143,20 @@ Job
                 adapter.notifyDataSetChanged();
                 swipeContainer.setRefreshing(false); // refresh is done
             }
-        });`
+        });
+        ```
     
     * Create/POST (create a new like on a post)
     * Delete/DELETE (delete existing like)
 
-* ### Search Jobs
+* Search Jobs
     * Read/GET (query all available job post that match search)
 
-* ### Search Results
+* Search Results
     * Create/POST(post all available job posts that match search)
     * Read/Get(get post information)
 
-* ### Post Jobs Screen
+* Create Jobs Screen
     * Create/Post(post job to the database)
 
         ParseObject post = new ParseObject("Post");
@@ -164,16 +165,16 @@ Job
         post.put("user", user);
         post.saveInBackground();
 
-* ### Post Details Screen
+* Post Details Screen
     * Read/Get(get post information)
     
-* ### Profile Screen
+* Profile Screen
     * Read/GET(query logged in user object)
     * Update/Put(update user information: profile image, resume)
         
-* ### User Sign Up Screen
+* User Sign Up Screen
    * Read/GET
-   
+    ```
     ParseUser user = new ParseUser();
     user.setUsername("my name");
     user.setPassword("my pass");
@@ -192,10 +193,10 @@ Job
         }
       }
     });
-
-* ### User Login Screen
+   ```
+* User Login Screen
    * Read/GET
-   
+    ```
     ParseUser.logInInBackground("Jerry", "showmethemoney", new LogInCallback() {
       public void done(ParseUser user, ParseException e) {
         if (user != null) {
@@ -205,5 +206,6 @@ Job
         }
       }
     });
+    ```
 
 ### [OPTIONAL:] Existing API Endpoints
