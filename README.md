@@ -180,8 +180,6 @@ Job
     user.setUsername("my name");
     user.setPassword("my pass");
     user.setEmail("email@example.com");
-
-    // other fields can be set just like with ParseObject
     user.put("phone", "650-253-0000");
 
     user.signUpInBackground(new SignUpCallback() {
@@ -203,7 +201,7 @@ Job
         if (user != null) {
           // Hooray! The user is logged in.
         } else {
-          // Signup failed. Look at the ParseException to see what happened.
+          // Signup failed. Check the ParseException to see what happened.
         }
       }
     });
