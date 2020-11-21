@@ -100,21 +100,32 @@ Optional:
 
 ### Models
 
-Job
+Job(Post)
 
-| Property         | Type     | Description |
-| --------         | -------- | ----------- |
-| objectId         | String   | unique id for the user post (default field)|
-| author           | User     | User profile-pic|
-| createdAt        | DateTime | date when post is created (default field)|
-| updatedAt        | DateTime | date when post is last updated (default field)|
-| isFull           | boolean  | see if job is full.
-| skills           | List<Skill>| list of top skills needed for this job
-| offerSponsorship | boolean  | inform user if their visa qualify for this position|
-| applicants | Number | number of applicans for this position|
-| hastags | Symbol | get information about a specific job, industry, major or qualification needed, ...|
-| likesCount | Number | number of likes for the job |
+| Property         | Type        | Description |
+| --------         | --------    | ----------- |
+| objectId         | String      | unique id for the user post (default field)|
+| author           | User        | User profile-pic|
+| createdAt        | DateTime    | date when post is created (default field)|
+| updatedAt        | DateTime    | date when post is last updated (default field)|
+| isFull           | boolean     | see if job is full.
+| skills           | List<Skill> | list of top skills needed for this job
+| offerSponsorship | boolean     | inform user if their visa qualify for this position|
+| applicants       | Number      | number of applicans for this position|
+| hastags          | Symbol      | get information about a specific job, industry, major or qualification needed, ...|
+| likesCount       | Number      | number of likes for the job |
 
+
+User
+
+| Property    | Type     | Description |
+| --------    | -------- | ----------- |
+| objectId    | String   | unique id for current user (default field)|
+| userName    | String   | user name set by user on account creation |
+| password    | String   | password set by user on account creation |
+| email       | String   | email provided by user on account creation |
+| createdAt   | DateTime | date when accountt is created (default field) |
+| updatedAt   | DateTime | date when account is last updated (default field)|
 
 ### Networking
 
