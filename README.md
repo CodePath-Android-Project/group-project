@@ -218,3 +218,29 @@ User
     ```
 
 ### [OPTIONAL:] Existing API Endpoints
+
+Indeed Job Search API
+   * Base URL - https://opensource.indeedeng.io/api-documentation/docs/job-search/#requirements
+   
+   | HTTP Verb | Endpoint | Description |
+   | --------  | -------- | ----------- |
+   | GET | /query | query all available jobs with the provided parameters |
+   | GET | /location | location where the job is available (postal code or combination of city, and state/province/region) |
+   | GET | /jt | job's type (fulltime, parttime, contract, internship, or temporary |
+   | GET | /radius | distance from job search location |
+   | GET | /fromage | number of days since job was posted |
+   | GET | /co | country to search for |
+   | GET | /results | results of search based on provided parameters |
+   | GET | /results/jobtitle | title of job|
+   | GET | /results/company  | company offering the job |
+   | GET | /results/city  | city where job is offered |
+   | GET | /results/state  | state where job is offered |
+   | GET | /results/country  | country where job is offered |
+   | GET | /results/formattedLocation  | city and state where job is offered |
+   | GET | /results/date  | date from which job is available |
+   | GET | /results/snippet  | required skills needed for the job |
+   | GET | /results/sponsored  | whether sponsorship is offered for this job or not |
+   
+   
+   
+   
