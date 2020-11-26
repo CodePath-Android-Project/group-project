@@ -1,5 +1,3 @@
-##modification from android studio
-
 # group-project
 # Job and Skill Finder
 
@@ -28,7 +26,7 @@ Helps students whether they're local or international to look for jobs based on 
 * Job posting feed with filter
 * Job posting feed for international students from companies that sponsor
 * Profile pages for each user where they can see all their saved posts
-* Settings (Accesibility, Notification, General, etc.)
+* Settings (Accessibility, Notification, General, etc.)
 
 **Optional Nice-to-have Stories**
 
@@ -63,7 +61,7 @@ Helps students whether they're local or international to look for jobs based on 
 * Search
     * User can search for job at companies that offer sponsorship.
     * User can search for jobs based on desired filter.
-    * User can follow comanies that are or could be hiring in the future.
+    * User can follow companies that are or could be hiring in the future.
 
 ### 3. Navigation
 
@@ -113,8 +111,8 @@ Job(Post)
 | isFull           | boolean     | see if job is full.
 | skills           | List<Skill> | list of top skills needed for this job
 | offerSponsorship | boolean     | inform user if their visa qualify for this position|
-| applicants       | Number      | number of applicans for this position|
-| hastags          | Symbol      | get information about a specific job, industry, major or qualification needed, ...|
+| applicants       | Number      | number of applicants for this position|
+| hashtags          | Symbol      | get information about a specific job, industry, major or qualification needed, ...|
 | likesCount       | Number      | number of likes for the job |
 
 
@@ -126,7 +124,7 @@ User
 | userName    | String   | user name set by user on account creation |
 | password    | String   | password set by user on account creation |
 | email       | String   | email provided by user on account creation |
-| createdAt   | DateTime | date when accountt is created (default field) |
+| createdAt   | DateTime | date when account is created (default field) |
 | updatedAt   | DateTime | date when account is last updated (default field)|
 
 ### Networking
