@@ -22,17 +22,24 @@ Helps students whether they're local or international to look for jobs based on 
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-- [ ] User authentication
-    - [ ] User can sign up to create a new account using Parse authentication.
-    - [ ] User can log in and log out of his/her account.
-    - [ ] The current signed in user is persisted across app restarts.
+- [x] User authentication
+    - [x] User can sign up to create a new account using Parse authentication.
+    - [x] User can log in and log out of his/her account.
+    - [x] The current signed in user is persisted across app restarts.
+- [x] User can navigate between screens using the bottom navigation bar.
 - [ ] Job posting feed
-    - [ ] User can navigate between screens using the bottom navigation bar.
 - [ ] Job posting feed for international students from companies that sponsor.
 - [ ] User can  post or share a recommended job.
 - [ ] User can see a post details.
 - [ ] Profile pages for each user where they can see all their saved posts.
 
+### 1. Video Walkthrough 
+Here's a walkthrough of implemented user stories:
+
+<img src="https://imgur.com/I6u77qI.jpg" title="authentication" alt="authentication" width=250> 
+<img src="https://imgur.com/gwVqeDW.jpg" title="user-is-persisted" alt="user-is-persisted" width=250>
+
+Gif created with [Kap](https://getkap.co).
 
 **Optional Nice-to-have Stories**
 
