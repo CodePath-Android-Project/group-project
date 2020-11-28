@@ -22,22 +22,26 @@ Helps students whether they're local or international to look for jobs based on 
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-* User authentification
-* Job posting feed with filter
-* Job posting feed for international students from companies that sponsor
-* Profile pages for each user where they can see all their saved posts
-* Settings (Accessibility, Notification, General, etc.)
+- [ ] User authentication
+    - [ ] User can sign up to create a new account using Parse authentication.
+    - [ ] User can log in and log out of his/her account.
+    - [ ] The current signed in user is persisted across app restarts.
+- [ ] Job posting feed
+    - [ ] User can navigate between screens using the bottom navigation bar.
+- [ ] Job posting feed for international students from companies that sponsor.
+- [ ] User can  post or share a recommended job.
+- [ ] User can see a post details.
+- [ ] Profile pages for each user where they can see all their saved posts.
+
 
 **Optional Nice-to-have Stories**
 
-* Users can save jobs they are interested in
-* Skills companies are looking for
-* where to look for such skills
-* Users can tap a post to see more details about it
-* Users can see populate or trending jobs and jobs that match most their skills
-* User can search for jobs by a hashtag
-* User can post or share a recommended job
-* Social (messaging between users)
+- [ ] Users can save jobs they are interested in
+- [ ] Skills companies are looking for
+- [ ] Where to look for such skills
+- [ ] Users can see populate or trending jobs and jobs that match most their skills
+- [ ] Social (messaging between users)
+- [ ] Settings (Accessibility, Notification, General, etc.)
 
 ### 2. Screen Archetypes
 

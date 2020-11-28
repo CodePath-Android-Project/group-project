@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/group-project.iml" filepath="$PROJECT_DIR$/.idea/group-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JobFinder.iml" filepath="$PROJECT_DIR$/.idea/modules/JobFinder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/JobFinder.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/JobFinder.app.iml" />
     </modules>
   </component>
 </project>
