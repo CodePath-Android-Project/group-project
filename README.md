@@ -36,8 +36,8 @@ Helps students whether they're local or international to look for jobs based on 
 ### Video Walkthrough 
 Here's a walkthrough of implemented user stories:
 
-<img src="https://i.imgur.com/I6u77qI.gif" title="authentication" alt="authentication" width=250 /> 
-<img src="https://i.imgur.com/gwVqeDW.gif" title="user-is-persisted" alt="user-is-persisted" width=250 />
+<img src="" alt="authentication" width=250 /> 
+<img src="" alt="user-is-persisted" width=250 />
 
 Gif created with [Kap](https://getkap.co).
 
