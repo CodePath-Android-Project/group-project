@@ -13,44 +13,43 @@
         android:id="@+id/tvAppName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="sans-serif"
-        android:text="JobSkillFinder"
+        android:text="@string/appname"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="46sp"
+        android:textSize="42sp"
         android:textStyle="bold|italic" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/username_text_input_layout"
+        android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconTint="@android:color/holo_blue_dark">
+        android:layout_marginBottom="10dp"
+        android:autofillHints=""
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/username"
+        android:inputType="text">
 
-        <EditText
-            android:id="@+id/etUsername"
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="UserName"
-            android:padding="12dp" />
+            android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password_text_input_layout"
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:endIconMode="password_toggle">
 
-        <EditText
-            android:id="@+id/etPassword"
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:hint="Password"
-            android:padding="12dp" />
+            android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -58,17 +57,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/login_btn_background"
-        android:textAllCaps="false"
-        tools:text="Login" />
+        android:text="Login"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/signup_btn_background"
-        android:textAllCaps="false"
-        tools:text="Sign Up" />
+        android:text="Sign Up"
+        android:textAllCaps="false" />
 
 </LinearLayout>

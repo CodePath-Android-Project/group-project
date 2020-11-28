@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -17,8 +18,8 @@ import com.parse.ParseUser;
 public class LoginActivity extends AppCompatActivity {
 
     public static final String TAG = "LoginActivity";
-    private EditText etUsername;
-    private EditText etPassword;
+    private TextInputLayout etUsername;
+    private TextInputLayout etPassword;
     private Button btnLogin;
     private Button btnSignUp;
 
@@ -40,11 +41,11 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "Click on Login Button");
-                String userName = etUsername.getText().toString();
-                String password = etPassword.getText().toString();
+                Log.i(TAG, "onClick on login Button");
+                String username = etUsername.getEditText().getText().toString();
+                String password = etPassword.getEditText().getText().toString();
 
-                loginUser(userName, password);
+                loginUser(username, password);
             }
         });
 
@@ -56,10 +57,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void loginUser(String userName, String password) {
-        Log.i(TAG, "Attempt to login user");
+    private void loginUser(String username, String password) {
+        Log.i(TAG, "Attempt to login user" + username);
 
-        ParseUser.logInInBackground(userName, password, new LogInCallback() {
+        ParseUser.logInInBackground(username, password, new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if (e != null) { // if there is a problem (the request did not succeed)
