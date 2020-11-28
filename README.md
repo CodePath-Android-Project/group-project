@@ -33,11 +33,11 @@ Helps students whether they're local or international to look for jobs based on 
 - [ ] User can see a post details.
 - [ ] Profile pages for each user where they can see all their saved posts.
 
-### 1. Video Walkthrough 
+### Video Walkthrough 
 Here's a walkthrough of implemented user stories:
 
-<img src="https://imgur.com/I6u77qI.jpg" title="authentication" alt="authentication" width=250> 
-<img src="https://imgur.com/gwVqeDW.jpg" title="user-is-persisted" alt="user-is-persisted" width=250>
+<img src="https://imgur.com/I6u77qI.gif" title="authentication" alt="authentication" width=250> 
+<img src="https://imgur.com/gwVqeDW.gif" title="user-is-persisted" alt="user-is-persisted" width=250>
 
 Gif created with [Kap](https://getkap.co).
 
