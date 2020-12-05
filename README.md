@@ -101,9 +101,11 @@ Optional:
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://imgur.com/J63TTlw.jpg" width=800 height=400 />
+<img src="https://imgur.com/CN6ugk8.png" width=800 height=400 />
 
 ### [BONUS] Interactive Prototype
 <img src="https://imgur.com/aYYrc7l.gif" width=200 />
+<img src="https://imgur.com/XXHXuQH.gif" width=200 />
 
 
 ## Schema
@@ -252,5 +254,5 @@ Indeed Job Search API
    | GET | /results/sponsored  | whether sponsorship is offered for this job or not |
    
    
-   
+   Icon generated from [Icons8](href="https://icons8.com/icons/set/find-matching-job">).
    

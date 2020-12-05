@@ -4,9 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.transition.Transition;
+import androidx.transition.TransitionInflater;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 
 import com.example.jobfinder.fragments.ComposeFragment;
 import com.example.jobfinder.fragments.PostsFragment;
@@ -54,5 +59,20 @@ public class MainActivity extends AppCompatActivity {
         });
         // Set default selection
         bottomNavigationView.setSelectedItemId(R.id.action_home);
+
+
+//        //check that device is running lollipop
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            // inflate transition to apply
+//            Transition postSaved = TransitionInflater.from(this).inflateTransition(R.transition.post_saved_transition);
+//            Transition compose = TransitionInflater.from(this).inflateTransition(R.transition.compose_transition);
+//
+//            //set up exit transition on compose fragment
+//            composeFragment.setSharedElementReturnTransition(postSaved);
+//            composeFragment.setExitTransition(compose);
+//
+//            //set up enter transition on posts fragment
+//            postsFragment.setEnterTransition(postSaved);
+//        }
     }
 }

@@ -2,12 +2,17 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlPostItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    android:transitionName="post">
 
     <!--A layout is needed for each row in the list, use recyclerview to show posts-->
-
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"

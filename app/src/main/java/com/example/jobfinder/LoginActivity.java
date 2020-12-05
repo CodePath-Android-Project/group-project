@@ -81,8 +81,6 @@ public class LoginActivity extends AppCompatActivity {
     private void goToMainActivity() {
         Intent intentMain = new Intent(this, MainActivity.class);
         startActivity(intentMain);
-        //add animation to layout transition
-//        overridePendingTransition(R.anim.left_in, R.anim.right_out);
         finish(); //finish the login activity once user login successfully
     }
 

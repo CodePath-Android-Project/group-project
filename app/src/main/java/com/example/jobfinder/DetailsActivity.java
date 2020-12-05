@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 import org.parceler.Parcels;
 
@@ -27,14 +29,15 @@ public class DetailsActivity extends AppCompatActivity {
         tvCreatedAt = findViewById(R.id.tvCreatedAt);
 
         //retrieve data
-        Post post = Parcels.unwrap(getIntent().getParcelableExtra("post"));
-        tvUsername.setText(post.getUser().getUsername());
-        tvDescription.setText(post.getDescription());
+        ParseObject post = Parcels.unwrap(getIntent().getParcelableExtra("post"));
+        ParseUser user = (ParseUser) post.get(Post.KEY_USER);
+        tvUsername.setText(user.getUsername());
+        tvDescription.setText(post.get(Post.KEY_DESCRIPTION).toString());
         tvCreatedAt.setText(getFullTimestamp(post)); // this gives a short time, e.g: 7h ago
 //        tvCreatedAt.setText(post.getFullTimestamp()); // this gives a full date, e.g: Tue. 27/10
     }
 
-    public String getFullTimestamp(Post post) {
+    public String getFullTimestamp(ParseObject post) {
         fullTime = TimeFormatter.getTimeStamp(post.getCreatedAt().toString());
         return fullTime;
     }

@@ -2,41 +2,57 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentCompose"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:transitionName="postSaved"
     tools:context=".fragments.ComposeFragment">
 
     <TextView
         android:id="@+id/tvComposeFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_margin="10dp"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/primary_text"
         android:textSize="46sp"
         android:textStyle="bold"
-        android:textAlignment="center"
         tools:text="New Post" />
 
-    <EditText
-        android:id="@+id/etDescription"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilComposeView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvComposeFragment"
         android:layout_marginBottom="10dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="description"
-        android:inputType="textPersonName"
-        android:padding="14dp" />
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp">
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvComposeFragment"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Post description here"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:padding="14dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/etDescription"
+        android:layout_below="@id/tilComposeView"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/accent"
         android:text="Post"
         android:textColor="@color/white"
         android:textSize="16sp"

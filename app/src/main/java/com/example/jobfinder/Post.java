@@ -6,6 +6,7 @@ import com.parse.ParseUser;
 
 import org.parceler.Parcel;
 
+
 @Parcel(analyze = Post.class)
 @ParseClassName("Post")
 public class Post extends ParseObject {
@@ -19,7 +20,7 @@ public class Post extends ParseObject {
     public Post() { }
 
     public String getDescription() {
-        return KEY_DESCRIPTION;
+        return getString(KEY_DESCRIPTION);
     }
     public void setDescription(String description) {
         put(KEY_DESCRIPTION, description);

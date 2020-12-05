@@ -1,11 +1,15 @@
 package com.example.jobfinder.fragments;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,12 +18,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.jobfinder.MainActivity;
 import com.example.jobfinder.Post;
 import com.example.jobfinder.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
@@ -35,6 +43,14 @@ public class ComposeFragment extends Fragment {
     private EditText etDescription;
     private Button btnSubmit;
 
+    ProgressBar progressBar;
+
+    public ComposeFragment() {
+        // Required empty public constructor
+    }
+
+
+//    @Override
 //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 //    private static final String ARG_PARAM1 = "param1";
@@ -42,11 +58,8 @@ public class ComposeFragment extends Fragment {
 //
 //    // TODO: Rename and change types of parameters
 //    private String mParam1;
-//    private String mParam2;
 
-    public ComposeFragment() {
-        // Required empty public constructor
-    }
+    //    private String mParam2;
 //
 //    /**
 //     * Use this factory method to create a new instance of
@@ -65,8 +78,6 @@ public class ComposeFragment extends Fragment {
 //        fragment.setArguments(args);
 //        return fragment;
 //    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        if (getArguments() != null) {
@@ -74,7 +85,6 @@ public class ComposeFragment extends Fragment {
 //            mParam2 = getArguments().getString(ARG_PARAM2);
 //        }
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,6 +96,7 @@ public class ComposeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        progressBar = (ProgressBar) view.findViewById(R.id.pbLoading);
         etDescription = view.findViewById(R.id.etDescription);
         btnSubmit = view.findViewById(R.id.btnSubmit);
 
@@ -100,32 +111,57 @@ public class ComposeFragment extends Fragment {
 
                 //get user if description not empty
                 ParseUser currentUser = ParseUser.getCurrentUser();
+                progressBar.setVisibility(ProgressBar.VISIBLE);
+
                 //save user's post
                 savePost(description, currentUser);
+
+                //go back to posts fragment
+//                ComposeFragment composeFragment = new ComposeFragment();
+//                PostsFragment postsFragment = new PostsFragment();
+//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction()
+//                        .addSharedElement((RelativeLayout) findViewById(R.id.rlPostItem), "postSaved")
+//                        .replace(R.id.fragmentsContainer, postsFragment)
+//                        .addToBackStack(null);
+//                fragmentTransaction.commit();
+
+//                Fragment fragmentCompose = new ComposeFragment();
+//                Fragment fragmentPost = new PostsFragment();
+//
+//                getFragmentManager()
+//                        .beginTransaction()
+//                        .setReorderingAllowed(true)
+//                        .addSharedElement()
+//                        .replace(R.id.fragmentPosts, fragmentCompose)
+//                        .commit();
             }
         });
     }
 
-    // this will be needed is Post contain picture or files
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+    // this will be needed if Post contain picture or files
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//    }
 
     private void savePost(String description, ParseUser currentUser) {
-        Post post = new Post();
-        post.setDescription(description);
-        post.setUser(currentUser);
+        ParseObject post = ParseObject.create(Post.class);
+        post.put(Post.KEY_DESCRIPTION, description);
+        post.put(Post.KEY_USER, currentUser);
+
         post.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
                 if(e != null) {
                     Log.e(TAG, "Error while saving post", e);
                     Toast.makeText(getContext(), "Error while saving post!", Toast.LENGTH_SHORT).show();
+                } else {
+                    // when everything succeeded
+                    Log.i(TAG, "Post save was successful!");
+                    etDescription.setText("");
+                    progressBar.setVisibility(ProgressBar.INVISIBLE);
+                    Toast.makeText(getContext(), "Post saved!", Toast.LENGTH_SHORT).show();
                 }
-                // when everything succeeded
-                Log.i(TAG, "Post save was successful!");
-                etDescription.setText("");
             }
         });
     }

@@ -6,16 +6,20 @@
     <item
         android:id="@+id/action_home"
         android:enabled="true"
-        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_compose"
         android:enabled="true"
-        android:title="Post"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="@string/post"
         app:showAsAction="always" />
+
     <item
         android:id="@+id/action_profile"
-        android:title="Profile"
+        android:icon="@drawable/ic_baseline_perm_identity_24"
+        android:title="@string/profile"
         app:showAsAction="always" />
 </menu>

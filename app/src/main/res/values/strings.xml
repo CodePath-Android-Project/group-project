@@ -5,4 +5,7 @@
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="appname">JobSkillFinder</string>
+    <string name="home">Home</string>
+    <string name="post">Post</string>
+    <string name="profile">Profile</string>
 </resources>

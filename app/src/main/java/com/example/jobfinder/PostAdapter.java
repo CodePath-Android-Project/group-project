@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
 import org.parceler.Parcels;
 
 import java.util.List;
@@ -33,7 +36,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull PostAdapter.ViewHolder holder, int position) {
-        Post post = posts.get(position);
+        ParseObject post = posts.get(position);
         holder.bind(post);
     }
 
@@ -55,10 +58,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tvCreatedAt = itemView.findViewById(R.id.tvCreatedAt);
         }
 
-        public void bind(Post post) {
+        public void bind(ParseObject post) {
             //Bind the post data to the view elements
-            tvUserName.setText(post.getUser().getUsername());
-            tvDescription.setText(post.getDescription());
+            ParseUser user = (ParseUser) post.get(Post.KEY_USER);
+            String s = post.get(Post.KEY_DESCRIPTION).toString();
+            tvUserName.setText(user.getUsername());
+            tvDescription.setText(s);
             tvCreatedAt.setText(getFormattedTimestamp(post));
 
             //set on click listeners to access post details
@@ -72,9 +77,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             });
         }
 
-        public String getFormattedTimestamp(Post post) {
+        public String getFormattedTimestamp(ParseObject post) {
             formattedTime = TimeFormatter.getTimeDifference(post.getCreatedAt().toString());
             return formattedTime;
         }
+
+
     }
 }
