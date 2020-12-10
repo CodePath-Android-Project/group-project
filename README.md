@@ -27,16 +27,24 @@ Helps students whether they're local or international to look for jobs based on 
     - [x] User can log in and log out of his/her account.
     - [x] The current signed in user is persisted across app restarts.
 - [x] User can navigate between screens using the bottom navigation bar.
+- [ ] UI
+   - [x] App icon is personalized 
+   - [x] App color theme
+- [ ] User can  post or share a recommended job.
+   - [x] User can compose a post this to the app
+   - [x] Newly created posts are inserted into the timeline and do not rely on a full refresh
+- [ ] Profile pages for each user
+   - [x] User profile details.
+   - [x] User can see all their posted posts.
+   - [ ] User can see all their saved posts.
 - [ ] Job posting feed
 - [ ] Job posting feed for international students from companies that sponsor.
-- [ ] User can  post or share a recommended job.
 - [ ] User can see a post details.
-- [ ] Profile pages for each user where they can see all their saved posts.
 
 ### Video Walkthrough 
 Here's a walkthrough of implemented user stories:
 
-<img src="user-authentication.gif" alt="authentication" width=250> <img src="user-is-persisted.gif" alt="user-is-persisted" width=250>
+<img src="user-authentication.gif" alt="authentication" width=250> <img src="user-is-persisted.gif" alt="user-is-persisted" width=250> <img src="sprint3gif.gif" alt="sprint3-submission" width=250>
 
 Gif created with [Kap](https://getkap.co).
 
