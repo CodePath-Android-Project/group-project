@@ -11,12 +11,15 @@ import androidx.transition.TransitionInflater;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.example.jobfinder.fragments.ComposeFragment;
 import com.example.jobfinder.fragments.PostsFragment;
 import com.example.jobfinder.fragments.ProfileFragment;
+import com.example.jobfinder.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,13 +29,21 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        FloatingActionButton searchIcon = findViewById(R.id.action_search);
 
+        searchIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // go to search activity
+            }
+        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -46,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_compose:
 //                        Toast.makeText(MainActivity.this, "COMPOSE", Toast.LENGTH_SHORT).show();
                         fragment = new ComposeFragment();
+                        break;
+                    case R.id.action_search:
+                        fragment = new SearchFragment();
                         break;
                     case R.id.action_profile:
                     default:

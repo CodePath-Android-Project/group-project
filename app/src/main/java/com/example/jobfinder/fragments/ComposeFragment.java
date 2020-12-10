@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -117,23 +118,18 @@ public class ComposeFragment extends Fragment {
                 savePost(description, currentUser);
 
                 //go back to posts fragment
-//                ComposeFragment composeFragment = new ComposeFragment();
-//                PostsFragment postsFragment = new PostsFragment();
-//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction()
-//                        .addSharedElement((RelativeLayout) findViewById(R.id.rlPostItem), "postSaved")
-//                        .replace(R.id.fragmentsContainer, postsFragment)
-//                        .addToBackStack(null);
-//                fragmentTransaction.commit();
+//                Navigation.findNavController(view).navigate(R.id.postsView);
 
-//                Fragment fragmentCompose = new ComposeFragment();
-//                Fragment fragmentPost = new PostsFragment();
-//
-//                getFragmentManager()
-//                        .beginTransaction()
-//                        .setReorderingAllowed(true)
-//                        .addSharedElement()
-//                        .replace(R.id.fragmentPosts, fragmentCompose)
-//                        .commit();
+//                findNavController().navigate(R.id.fragmentPosts);
+
+                Fragment fragmentCompose = new ComposeFragment();
+                Fragment fragmentPost = new PostsFragment();
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .setReorderingAllowed(true)
+                        .replace(R.id.postsView, getTargetFragment())
+                        .commit();
             }
         });
     }

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.parse.ParseObject;
@@ -70,9 +71,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tvDescription.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, DetailsActivity.class);
-                    intent.putExtra("post", Parcels.wrap(post));
-                    context.startActivity(intent);
+                    Navigation.findNavController(v).navigate(R.id.detailScreen);
                 }
             });
         }
