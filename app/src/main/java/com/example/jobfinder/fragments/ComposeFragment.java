@@ -21,11 +21,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jobfinder.MainActivity;
 import com.example.jobfinder.Post;
 import com.example.jobfinder.R;
+import com.google.android.material.textfield.TextInputLayout;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -41,8 +43,10 @@ public class ComposeFragment extends Fragment {
 
     public static final String TAG = "ComposeFragment";
 
-    private EditText etDescription;
     private Button btnSubmit;
+    private TextInputLayout etDescription;
+    private TextInputLayout etCompany;
+    private TextInputLayout etSponsor;
 
     ProgressBar progressBar;
 
@@ -99,12 +103,18 @@ public class ComposeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         progressBar = (ProgressBar) view.findViewById(R.id.pbLoading);
         etDescription = view.findViewById(R.id.etDescription);
+        etCompany = view.findViewById(R.id.etCompany);
+        etSponsor = view.findViewById(R.id.etSponsor);
+
         btnSubmit = view.findViewById(R.id.btnSubmit);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String description = etDescription.getText().toString();
+                String description = etDescription.getEditText().getText().toString();
+                String company = etCompany.getEditText().getText().toString();
+                String sponsor = etSponsor.getEditText().getText().toString();
+
                 if (description.isEmpty()) {
                     Toast.makeText(getContext(), "Description can not be empty", Toast.LENGTH_SHORT).show();
                     return;
@@ -115,21 +125,8 @@ public class ComposeFragment extends Fragment {
                 progressBar.setVisibility(ProgressBar.VISIBLE);
 
                 //save user's post
-                savePost(description, currentUser);
+                savePost(company, sponsor, description, currentUser);
 
-                //go back to posts fragment
-//                Navigation.findNavController(view).navigate(R.id.postsView);
-
-//                findNavController().navigate(R.id.fragmentPosts);
-
-                Fragment fragmentCompose = new ComposeFragment();
-                Fragment fragmentPost = new PostsFragment();
-
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.postsView, getTargetFragment())
-                        .commit();
             }
         });
     }
@@ -140,9 +137,11 @@ public class ComposeFragment extends Fragment {
 //        super.onActivityResult(requestCode, resultCode, data);
 //    }
 
-    private void savePost(String description, ParseUser currentUser) {
+    private void savePost(String company, String sponsor, String description, ParseUser currentUser) {
         ParseObject post = ParseObject.create(Post.class);
+        post.put(Post.KEY_COMPANY_NAME, company);
         post.put(Post.KEY_DESCRIPTION, description);
+        post.put(Post.KEY_COMPANY_SPONSOR, sponsor);
         post.put(Post.KEY_USER, currentUser);
 
         post.saveInBackground(new SaveCallback() {
@@ -154,11 +153,16 @@ public class ComposeFragment extends Fragment {
                 } else {
                     // when everything succeeded
                     Log.i(TAG, "Post save was successful!");
-                    etDescription.setText("");
+//                    etDescription.setText("");
+//                    etCompany.setText("");
+//                    etSponsor.setText("No");
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
                     Toast.makeText(getContext(), "Post saved!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        //go back to posts fragment
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, new PostsFragment()).commit();
     }
 }

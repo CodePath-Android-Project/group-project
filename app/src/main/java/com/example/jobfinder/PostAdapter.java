@@ -50,6 +50,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         private TextView tvUserName;
         private TextView tvDescription;
         private TextView tvCreatedAt;
+        private TextView tvSponsor;
         public String formattedTime;
 
         public ViewHolder(@NonNull View itemView) {
@@ -57,14 +58,17 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tvUserName = itemView.findViewById(R.id.tvUsername);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvCreatedAt = itemView.findViewById(R.id.tvCreatedAt);
+            tvSponsor = itemView.findViewById(R.id.tvSponsor);
         }
 
         public void bind(ParseObject post) {
             //Bind the post data to the view elements
             ParseUser user = (ParseUser) post.get(Post.KEY_USER);
             String s = post.get(Post.KEY_DESCRIPTION).toString();
-            tvUserName.setText(user.getUsername());
+            String visa = post.get(Post.KEY_COMPANY_SPONSOR).toString();
+            tvUserName.setText(post.get(Post.KEY_COMPANY_NAME).toString());
             tvDescription.setText(s);
+            tvSponsor.setText(visa);
             tvCreatedAt.setText(getFormattedTimestamp(post));
 
             //set on click listeners to access post details

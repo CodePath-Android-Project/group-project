@@ -14,6 +14,8 @@ public class Post extends ParseObject {
     public static final String KEY_DESCRIPTION = "description";
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED_AT = "createdAt";
+    public static final String KEY_COMPANY_NAME = "company";
+    public static final String KEY_COMPANY_SPONSOR = "visaSponsor";
     public String formattedTime;
 
     //this is needed for Parcel

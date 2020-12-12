@@ -17,24 +17,52 @@
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="Abravi" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvCompany"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+
+    <TextView
+        android:id="@+id/tvSponsored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvUsername"
+        android:layout_marginBottom="8dp"
+        android:text="Visa Sponsor:"/>
+
+    <TextView
+        android:id="@+id/tvSponsor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserName"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_toEndOf="@+id/tvSponsored"
+        tools:text="Yes" />
 
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvUsername"
+        android:layout_below="@id/tvSponsored"
         android:layout_marginBottom="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:text="Enter your post here!" />
+
 
     <TextView
         android:id="@+id/tvCreatedAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvDescription"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="5dp"
+        android:layout_alignParentEnd="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         tools:text="5 mins ago" />
 </RelativeLayout>
