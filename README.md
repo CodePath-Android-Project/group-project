@@ -30,20 +30,21 @@ Helps students whether they're local or international to look for jobs based on 
 - [ ] UI
    - [x] App icon is personalized 
    - [x] App color theme
-- [ ] User can  post or share a recommended job.
+- [x] User can  post or share a recommended job.
    - [x] User can compose a post this to the app
    - [x] Newly created posts are inserted into the timeline and do not rely on a full refresh
+   - [x] User is taken back to home timeline with new job post visible in timeline
 - [ ] Profile pages for each user
    - [x] User profile details.
    - [x] User can see all their posted posts.
    - [ ] User can see all their saved posts.
-- [ ] Job posting feed
-- [ ] Job posting feed for international students from companies that sponsor.
+- [x] Job posting feed
+- [x] Job posting feed for international students from companies that sponsor.
 - [ ] User can see a post details.
 
 ### Video Walkthrough 
 Here's a walkthrough of implemented user stories:
-
+<img src="sprint4.gif" alt="authentication" width=250>
 <img src="user-authentication.gif" alt="authentication" width=250> <img src="user-is-persisted.gif" alt="user-is-persisted" width=250> <img src="sprint3gif.gif" alt="sprint3-submission" width=250>
 
 Gif created with [Kap](https://getkap.co).
